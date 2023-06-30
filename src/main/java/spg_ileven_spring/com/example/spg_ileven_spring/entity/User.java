@@ -16,7 +16,18 @@ public class User {
 
     private String email;
 
+
+    private  String password;
+
     // Constructor, getters y setters
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "type_user_id")
@@ -25,7 +36,7 @@ public class User {
         // Constructor sin argumentos requerido por JPA
     }
 
-    public User(String name, String email, UserType userType) {
+    public User(String name, String email , String password, UserType userType) {
         this.name = name;
         this.email = email;
         this.userType = userType;
